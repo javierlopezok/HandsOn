@@ -12,7 +12,7 @@ namespace DataAccess
     public class ExternalApi : IExternalApi
     {
 
-        public List<EmployeeVM> GetEmployees()
+        public List<EmployeeVM> GetEmployees(string id)
         {
 
             var requestUri = "http://masglobaltestapi.azurewebsites.net/api/Employees";
@@ -32,7 +32,7 @@ namespace DataAccess
 
                 var resultContent = JsonConvert.DeserializeObject<List<EmployeeVM>>(content);
 
-                return resultContent.ToList();
+                return resultContent.Where(c => !string.IsNullOrWhiteSpace(id) ?  c.Id == Int32.Parse(id) : true).ToList();
             }
             else
             {

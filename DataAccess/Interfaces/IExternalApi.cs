@@ -9,6 +9,6 @@ namespace DataAccess
 {
     public interface IExternalApi
     {
-        List<EmployeeVM> GetEmployees();
+        List<EmployeeVM> GetEmployees(string id);
     }
 }
