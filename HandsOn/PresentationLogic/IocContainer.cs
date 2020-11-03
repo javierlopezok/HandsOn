@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Autofac.Core.Lifetime;
 using Autofac.Integration.Mvc;
+using Business_Logic;
 using DataAccess;
 using Owin;
 using System.Reflection;
@@ -18,6 +19,7 @@ namespace HandsOn.PresentationLogic
             var requestTag = MatchingScopeLifetimeTags.RequestLifetimeScopeTag;
 
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
+            builder.RegisterType<EmployeeService>().As<IEmployeeService>();
 
             builder.RegisterType<ExternalApi>().As<IExternalApi>().InstancePerMatchingLifetimeScope(requestTag);       
 

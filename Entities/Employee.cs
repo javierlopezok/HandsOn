@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccess.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Web;
 namespace Entities
 {
 
-    public class HourlyEmployee
+    public class Employee
     {
         public int Id { get; set; }
 
@@ -15,34 +16,36 @@ namespace Entities
 
         public int RoleId { get; set; }
 
-        [ForeignKey("RoleId")]
-        public Role Role { get; set; }
+        public string RoleName { get; set; }
 
-        public int HourlySalary { get; set; }
+        public string RoleDescription { get; set; }
+
+        public string contractTypeName { get; set; }
+
+        public decimal AnnualSalary { get; set; }
+
     }
 
-    public class MonthlyEmployee
+    public partial class HourlyEmployee : Employee
     {
-        public int Id { get; set; }
+        public HourlyEmployee(decimal hourlySalary)
+        {
+            AnnualSalary = hourlySalary * 12 * 120;
+        }
 
-        public string Name { get; set; }
+        public decimal HourlySalary { get; set; }
 
-        public int RoleId { get; set; }
-
-        [ForeignKey("RoleId")]
-        public Role Role { get; set; }
-
-        public int MonthlySalary { get; set; }
     }
 
-    public class Role
+
+    public class MonthlyEmployee : Employee
     {
-        public int Id { get; set; }
+        public MonthlyEmployee(decimal monthlySalary)
+        {
+            AnnualSalary = monthlySalary * 12;
+        }
 
-        public string Name { get; set; }
-
-        public string Description { get; set; }
+        public decimal MonthlySalary { get; set; }
     }
-
 
 }

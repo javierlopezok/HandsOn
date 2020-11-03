@@ -73,6 +73,7 @@
     <Compile Include="EmployeesService.cs" />
     <Compile Include="Interfaces\IEmployeesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\GeneralEnum.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -83,7 +84,16 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{C9CFCEB7-536A-4A70-B0BA-4300E2F3E411}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{fca4c416-4dfb-4b23-b057-d0594b421aca}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

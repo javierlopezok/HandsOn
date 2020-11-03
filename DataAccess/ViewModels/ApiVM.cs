@@ -14,8 +14,8 @@ namespace DataAccess.ViewModels
         public int RoleId { get; set; }
         public string RoleName { get; set; }
         public string RoleDescription { get; set; }
-        public string HourlySalary { get; set; }
-        public string MonthlySalary { get; set; }
+        public decimal HourlySalary { get; set; }
+        public decimal MonthlySalary { get; set; }
     }
 
 }

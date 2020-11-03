@@ -6,13 +6,13 @@
     <thead>
         <tr>
             <th>
-                Nombre Area
+                ID
             </th>
             <th>
-                Precio Base
+                Name
             </th>
             <th>
-                Precio
+                AnnualSalary
             </th>
         </tr>
     </thead>
@@ -20,14 +20,17 @@
 
         @foreach (var item in ViewBag.Employees)
         {
-            <tr>
-                <td>
-                    @item.Id
-                </td>
-                <td>
-                    @item.Name
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @item.Id
+            </td>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.AnnualSalary
+            </td>
+        </tr>
         }
 
     </tbody>
