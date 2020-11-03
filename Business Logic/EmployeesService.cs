@@ -1,5 +1,6 @@
 ﻿using DataAccess.ViewModels;
 using Entities;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Services.Utils;
 
 namespace Business_Logic
@@ -26,7 +27,7 @@ namespace Business_Logic
 
             if (item.ContractTypeName == GeneralEnum.MonthlySalaryEmployee)
             {
-                
+
                 return new MonthlyEmployee(item.MonthlySalary)
                 {
                     Id = item.Id,
@@ -42,6 +43,12 @@ namespace Business_Logic
 
             return null;
 
+        }
+
+        [TestMethod]
+        public void TestGetEmployee()
+        {
+            Assert.IsNull(GetEmployee(null));
         }
 
     }
