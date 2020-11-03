@@ -2,34 +2,55 @@
     ViewBag.Title = "Home Page";
 }
 
-<table class="table table-striped m-table">
-    <thead>
-        <tr>
-            <th>
-                ID
-            </th>
-            <th>
-                Name
-            </th>
-            <th>
-                AnnualSalary
-            </th>
-        </tr>
-    </thead>
-    <tbody>
+<div class="row">
+    <div class="col-md-3">
+        <div class="input-group">
+            <input class="form-control" id="search" name="q" placeholder="Employee Id">
+            <span class="input-group-btn">
+                <button type="submit"  onclick="GetEmployees()" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
 
-    
-        <tr>
-            <td>
-               1
-            </td>
-            <td>
-              2
-            </td>
-            <td>
-              3
-            </td>
-        </tr>
+        <table id="table" class="table table-striped m-table">
+            <thead>
+                <tr>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        RoleId
+                    </th>
+                    <th>
+                        RoleName
+                    </th>
+                    <th>
+                        RoleDescription
+                    </th>
+                    <th>
+                        contractTypeName
+                    </th>
+                    <th>
+                        AnnualSalary
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
 
-    </tbody>
-</table>
+                <tr>
+                    <td>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="~/Content/custom/js/Employee.js"></script>

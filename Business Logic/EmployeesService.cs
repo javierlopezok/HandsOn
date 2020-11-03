@@ -19,7 +19,8 @@ namespace Business_Logic
                     RoleId = item.RoleId,
                     RoleName = item.RoleName,
                     RoleDescription = item.RoleDescription,
-                    HourlySalary = item.HourlySalary
+                    HourlySalary = item.HourlySalary,
+                    contractTypeName = item.ContractTypeName
                 };
             }
 
@@ -33,7 +34,8 @@ namespace Business_Logic
                     RoleId = item.RoleId,
                     RoleName = item.RoleName,
                     RoleDescription = item.RoleDescription,
-                    MonthlySalary = item.MonthlySalary
+                    MonthlySalary = item.MonthlySalary,
+                    contractTypeName = item.ContractTypeName
                 };
 
             }
